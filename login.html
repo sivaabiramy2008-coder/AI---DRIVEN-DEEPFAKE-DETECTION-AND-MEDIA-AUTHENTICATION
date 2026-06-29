@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<title>Login | DeepfakeGuard AI</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:Poppins,sans-serif;
+background:#081b33;
+}
+
+.login-container{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.login-card{
+width:420px;
+padding:40px;
+background:#102a4c;
+border-radius:20px;
+box-shadow:0 0 25px rgba(0,0,0,0.5);
+color:white;
+}
+
+.logo{
+text-align:center;
+font-size:30px;
+font-weight:600;
+}
+
+.subtitle{
+text-align:center;
+color:#b9c7dd;
+margin:12px 0 30px;
+}
+
+label{
+display:block;
+margin-top:18px;
+}
+
+input{
+width:100%;
+padding:13px;
+margin-top:8px;
+border:none;
+border-radius:10px;
+outline:none;
+box-sizing:border-box;
+}
+
+.options{
+display:flex;
+justify-content:space-between;
+margin-top:15px;
+font-size:14px;
+}
+
+button{
+width:100%;
+padding:14px;
+margin-top:25px;
+border:none;
+border-radius:10px;
+background:#0066ff;
+color:white;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#004bcc;
+}
+
+a{
+color:#4da3ff;
+text-decoration:none;
+}
+
+.signup{
+text-align:center;
+margin-top:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="login-container">
+
+<div class="login-card">
+
+<div class="logo">
+DeepfakeGuard AI
+</div>
+
+<div class="subtitle">
+AI Driven Deepfake Detection & Media Authentication
+</div>
+
+<form onsubmit="loginUser(event)">
+
+<label>Email Address</label>
+
+<input
+type="email"
+id="email"
+placeholder="Enter Email"
+required>
+
+<label>Password</label>
+
+<input
+type="password"
+id="password"
+placeholder="Enter Password"
+required>
+
+<div class="options">
+
+<label>
+<input type="checkbox">
+Remember Me
+</label>
+
+<a href="#">Forgot Password?</a>
+
+</div>
+
+<button type="submit">
+Login
+</button>
+
+</form>
+
+<div class="signup">
+Don't have an account?
+<a href="register.html">Register Now</a>
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function loginUser(event){
+
+event.preventDefault();
+
+window.location.href="dashboard.html";
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard - DeepfakeGuard AI</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>DeepfakeGuard</h2>
+
+    <a class="active" href="#">Dashboard</a>
+    <a href="upload.html">Upload Media</a>
+    <a href="analysis.html">Analysis</a>
+    <a href="results.html">Results</a>
+    <a href="reports.html">Reports</a>
+    <a href="analytics.html">Analytics</a>
+    <a href="profile.html">Profile</a>
+    <a href="settings.html">Settings</a>
+
+    <a href="login.html" class="logout">Logout</a>
+  </div>
+
+  <!-- Main -->
+  <div class="main">
+
+    <!-- Top bar -->
+    <div class="topbar">
+      <h1>Dashboard</h1>
+      <input type="text" placeholder="Search media...">
+    </div>
+
+    <!-- Cards -->
+    <div class="cards">
+
+    <div class="card">
+    <h3>Total Users</h3>
+    <p id="users">0</p>
+</div>
+
+<div class="card">
+    <h3>Total Uploads</h3>
+    <p id="uploads">0</p>
+</div>
+
+<div class="card">
+    <h3>Total Analysis</h3>
+    <p id="analysis">0</p>
+</div>
+
+<div class="card">
+    <h3>Fake Detected</h3>
+    <p id="fake">0</p>
+</div>
+    
+    </div>
+
+    <!-- Upload box -->
+    <div class="upload-box">
+      <h2>Quick Upload</h2>
+      <p>Drag & Drop media here or click upload</p>
+      <button>Upload File</button>
+    </div>
+
+    <button onclick="window.location.href='upload.html'">
+    Upload File
+</button>
+    
+    <div class="cards">
+
+    <div class="stat-card">
+        <h2 id="users">0</h2>
+        <p>Total Users</p>
+    </div>
+
+    <div class="stat-card">
+        <h2 id="uploads">0</h2>
+        <p>Total Uploads</p>
+    </div>
+
+    <div class="stat-card">
+        <h2 id="analysis">0</h2>
+        <p>Total Analysis</p>
+    </div>
+
+    <div class="stat-card">
+        <h2 id="fake">0</h2>
+        <p>Fake Detected</p>
+    </div>
+
+</div>
+
+  </div>
+
+
+</div>
+
+<script>
+
+fetch("http://127.0.0.1:5000/dashboard-stats")
+.then(response => response.json())
+.then(data => {
+
+    document.getElementById("users").innerText =
+    data.total_users;
+
+    document.getElementById("uploads").innerText =
+    data.total_uploads;
+
+    document.getElementById("analysis").innerText =
+    data.total_analysis;
+
+    document.getElementById("fake").innerText =
+    data.fake_detected;
+
+})
+.catch(error => {
+    console.log("Dashboard Error:", error);
+});
+
+</script>
+
+</body>
+</html>

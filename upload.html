@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Upload Media - DeepfakeGuard AI</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="style.css">
+
+<form action="upload.php" method="POST" enctype="multipart/form-data">
+<input type="file" name="media" required>
+<button type="submit" name="upload">
+Upload Media
+</button>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>DeepfakeGuard</h2>
+
+    <a href="dashboard.html">Dashboard</a>
+    <a class="active" href="upload.html">Upload Media</a>
+    <a href="analysis.html">Analysis</a>
+    <a href="results.html">Results</a>
+    <a href="reports.html">Reports</a>
+    <a href="analytics.html">Analytics</a>
+    <a href="profile.html">Profile</a>
+    <a href="settings.html">Settings</a>
+    <a href="login.html" class="logout">Logout</a>
+  </div>
+
+  <!-- Main -->
+  <div class="main">
+
+    <h1>Upload Media</h1>
+    <p>Upload image/video for Deepfake Analysis</p>
+
+    <!-- Upload Box -->
+    <div class="upload-area">
+
+      <div class="drop-box">
+        <p>📂 Drag & Drop Files Here</p>
+        <p>or</p>
+      
+
+        <input type="file" id="fileInput" onchange="showFileName()">
+
+        <p id="fileName">No file selected</p>
+        
+
+        <button onclick="uploadFile()">Upload File</button>
+      </div>
+
+    </div>
+
+    <!-- Form -->
+    <div class="form-box">
+
+      <input type="text" placeholder="Media Title">
+      
+      <select>
+        <option>Image</option>
+        <option>Video</option>
+        <option>Audio</option>
+      </select>
+
+      <textarea placeholder="Description"></textarea>
+       
+      <button onclick="startAnalysis()">
+      Start AI Analysis
+      </button>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+
+async function startAnalysis(){
+
+let file =
+document.getElementById("fileInput").files[0];
+
+if(!file){
+
+alert("Please Select File");
+return;
+
+}
+
+const response = await fetch(
+"http://127.0.0.1:5000/upload",
+{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
+file_name:file.name,
+file_type:"Image"
+})
+}
+);
+
+const data = await response.json();
+
+alert(data.message);
+
+if(data.status==="success"){
+
+window.location.href="analysis.html";
+
+}
+
+}
+
+</script>
+
+<button onclick="window.location.href='analysis.html'">
+    Start AI Analysis
+
+</button>
+</body>
+</html>

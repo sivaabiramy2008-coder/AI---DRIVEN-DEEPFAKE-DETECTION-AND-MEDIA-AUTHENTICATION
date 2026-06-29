@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Analytics - DeepfakeGuard AI</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+.chart-box{
+    text-align:center;
+}
+
+#deepfakeChart{
+    width:300px !important;
+    height:300px !important;
+    margin:auto;
+}
+
+
+.chart-box h2{
+    color:white;
+}
+
+
+.chart-box .chart-title{
+    color:white;
+}
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+<div class="dashboard">
+
+
+<div class="sidebar">
+
+<h2>DeepfakeGuard AI</h2>
+
+<a href="dashboard.html">Dashboard</a>
+<a href="upload.html">Upload Media</a>
+<a href="analysis.html">Analysis</a>
+<a href="analysis.php">analysis</a>
+<a href="reports.html">Reports</a>
+
+<a class="active" href="analytics.html">Analytics</a>
+
+<a href="profile.html">Profile</a>
+<a href="settings.html">Settings</a>
+
+<a href="login.html" class="logout">Logout</a>
+
+</div>
+
+
+
+
+<div class="main">
+
+
+<h1>AI Analytics Dashboard</h1>
+
+<p>Deepfake Detection Performance Overview</p>
+
+
+
+<div class="analytics-container">
+
+
+<div class="analytics-card">
+
+<h2>Total Files</h2>
+
+<h1>120</h1>
+
+<p>Analysed Media</p>
+
+</div>
+
+
+
+<div class="analytics-card">
+
+<h2>Deepfake</h2>
+
+<h1>35</h1>
+
+<p>Detected Files</p>
+
+</div>
+
+
+
+<div class="analytics-card">
+
+<h2>Authentic</h2>
+
+<h1>85</h1>
+
+<p>Verified Files</p>
+
+</div>
+
+
+</div>
+
+
+
+
+<div class="chart-box">
+
+
+<h2>Detection Statistics</h2>
+
+
+<canvas id="deepfakeChart"></canvas>
+
+
+</div>
+
+
+
+</div>
+
+</div>
+
+
+
+
+<script>
+
+
+const ctx = document.getElementById('deepfakeChart');
+
+
+new Chart(ctx, {
+
+
+type:'pie',
+
+
+data:{
+
+
+labels:[
+
+'Deepfake Detected',
+
+'Authentic Media'
+
+],
+
+
+datasets:[{
+
+
+data:[35,85],
+
+
+backgroundColor:[
+
+'#0066ff',
+
+'#ff0000'
+
+],
+
+
+borderWidth:2
+
+
+}]
+
+
+},
+
+
+
+options:{
+
+
+responsive:false,
+
+
+plugins:{
+
+
+legend:{
+
+
+position:'bottom',
+
+
+labels:{
+
+
+color:'white',
+
+
+font:{
+
+
+size:14
+
+}
+
+
+}
+
+
+}
+
+
+}
+
+
+}
+
+
+});
+
+
+
+</script>
+
+
+
+</body>
+
+</html>

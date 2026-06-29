@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<title>Register | DeepfakeGuard AI</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+
+<style>
+
+body{
+    margin:0;
+    font-family:Poppins,sans-serif;
+    background:#081b33;
+}
+
+
+.register-container{
+
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+
+.register-card{
+
+    width:420px;
+    padding:35px;
+    background:#102a4c;
+    border-radius:20px;
+    box-shadow:0 0 25px rgba(0,0,0,0.5);
+    color:white;
+
+}
+
+
+
+.logo{
+
+    text-align:center;
+    font-size:28px;
+    font-weight:600;
+    margin-bottom:10px;
+
+}
+
+
+
+.subtitle{
+
+    text-align:center;
+    color:#b9c7dd;
+    margin-bottom:25px;
+
+}
+
+
+
+label{
+
+    color:white;
+    display:block;
+    margin-top:15px;
+
+}
+
+
+
+input{
+
+    width:100%;
+    padding:12px;
+    margin-top:8px;
+    border:none;
+    border-radius:10px;
+    outline:none;
+
+}
+
+
+
+button{
+
+    width:100%;
+    margin-top:25px;
+    padding:13px;
+    border:none;
+    border-radius:10px;
+    background:#0066ff;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+
+}
+
+
+
+button:hover{
+
+    background:#004bcc;
+
+}
+
+
+
+p{
+
+    text-align:center;
+    margin-top:20px;
+
+}
+
+
+
+a{
+
+    color:#4da3ff;
+    text-decoration:none;
+
+}
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+<div class="register-container">
+
+
+<div class="register-card">
+
+
+<div class="logo">
+DeepfakeGuard AI
+</div>
+
+
+<div class="subtitle">
+AI Driven Deepfake Detection & Media Authentication
+</div>
+
+
+
+<form action="register.php" method="POST">
+
+
+
+<label>Full Name</label>
+
+<input 
+type="text"
+name="name"
+placeholder="Enter your name"
+required>
+
+
+
+<label>Email Address</label>
+
+<input
+type="email"
+name="email"
+placeholder="Enter email"
+required>
+
+
+
+<label>Password</label>
+
+<input
+type="password"
+name="password"
+placeholder="Create password"
+required>
+
+
+
+<button 
+type="submit"
+name="register">
+
+Create Account
+
+</button>
+
+
+
+<p>
+
+Already registered?
+
+<a href="login.html">
+Login Now
+</a>
+
+</p>
+
+</form>
+
+
+</form>
+
+
+</div>
+
+
+</div>
+
+
+</body>
+
+</html>

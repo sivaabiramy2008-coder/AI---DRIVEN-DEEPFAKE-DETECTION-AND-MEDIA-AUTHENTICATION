@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AI Analysis - DeepfakeGuard</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>DeepfakeGuard</h2>
+
+    <a href="dashboard.html">Dashboard</a>
+    <a href="upload.html">Upload Media</a>
+    <a class="active" href="analysis.html">Analysis</a>
+    <a href="results.html">Results</a>
+    <a href="reports.html">Reports</a>
+    <a href="analytics.html">Analytics</a>
+    <a href="profile.html">Profile</a>
+    <a href="settings.html">Settings</a>
+    <a href="login.html" class="logout">Logout</a>
+  </div>
+
+  <!-- Main -->
+  <div class="main">
+
+    <h1>AI Analysis Engine</h1>
+    <p>Deepfake detection in progress...</p>
+
+    <!-- Processing Box -->
+    <div class="analysis-box">
+
+      <h2>Processing Media</h2>
+
+      <div class="loader"></div>
+
+      <p>Scanning Face Patterns...</p>
+      <p>Extracting Features...</p>
+      <p>Running AI Model...</p>
+
+      <!-- Progress Bar -->
+      <div class="progress-bar">
+        <div class="progress"></div>
+      </div>
+
+      <button onclick="startAnalysis()">Start Analysis</button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+
+async function saveResult(){
+
+    await fetch(
+    "http://127.0.0.1:5000/save-analysis",
+    {
+        method:"POST",
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body:JSON.stringify({
+            file_name:"sample_image.jpg",
+            result:"Fake",
+            confidence:96.5
+        })
+    });
+
+    window.location.href = "results.html";
+
+}
+
+function startAnalysis(){
+
+    let progress = document.querySelector(".progress");
+    let width = 0;
+
+    let interval = setInterval(() => {
+
+        if(width >= 100){
+
+            clearInterval(interval);
+
+            alert("AI Analysis Completed Successfully!");
+
+            saveResult();
+
+        }else{
+
+            width++;
+
+            progress.style.width = width + "%";
+
+        }
+
+    },30);
+
+}
+
+</script>
+<button onclick="startAnalysis()">
+    Start Analysis
+</button>
+
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Reports - DeepfakeGuard AI</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <tbody id="reportTable"></tbody>
+
+<div class="dashboard">
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>DeepfakeGuard</h2>
+
+    <a href="dashboard.html">Dashboard</a>
+    <a href="upload.html">Upload Media</a>
+    <a href="analysis.html">Analysis</a>
+    <a href="results.html">Results</a>
+    <a class="active" href="reports.html">Reports</a>
+    <a href="analytics.html">Analytics</a>
+    <a href="profile.html">Profile</a>
+    <a href="settings.html">Settings</a>
+    <a href="login.html" class="logout">Logout</a>
+  </div>
+
+  <!-- Main -->
+  <div class="main">
+
+    <h1>AI Reports Center</h1>
+    <table>
+
+<thead>
+<tr>
+<th>ID</th>
+<th>File Name</th>
+<th>Result</th>
+<th>Confidence</th>
+<th>Date</th>
+</tr>
+</thead>
+
+<tbody id="reportTable"></tbody>
+
+</table>
+    <p>Download and manage detection reports</p>
+
+    <!-- Report Cards -->
+    <div class="report-container">
+
+      <div class="report-card">
+        <h3>Report ID: DF-001</h3>
+        <p>Media: sample1.mp4</p>
+        <p>Status: Fake Detected</p>
+        <button onclick="download()">Download PDF</button>
+      </div>
+
+      <div class="report-card">
+        <h3>Report ID: DF-002</h3>
+        <p>Media: image2.jpg</p>
+        <p>Status: Real</p>
+        <button onclick="download()">Download PDF</button>
+      </div>
+
+      <div class="report-card">
+        <h3>Report ID: DF-003</h3>
+        <p>Media: video3.mp4</p>
+        <p>Status: Fake Detected</p>
+        <button onclick="download()">Download PDF</button>
+        <p>File : sample_image.jpg</p>
+        <p>Status : Fake</p>
+        <p>Confidence : 96.5%</p>
+        <p>Date : 21-06-2026</p>
+      </div>
+        
+      
+    </div>
+
+  </div>
+
+</div>
+<p>File : sample_image.jpg</p>
+<p>Status : Fake</p>
+<p>Confidence : 96.5%</p>
+<p>Date : 21-06-2026</p>
+
+<script>
+function download(){
+  alert("PDF Report Download Started...");
+}
+</script>
+
+<script>
+
+fetch("http://127.0.0.1:5000/analysis-history")
+.then(response => response.json())
+.then(data => {
+
+let output = "";
+
+data.forEach(report => {
+
+output += `
+<tr>
+<td>${report.id}</td>
+<td>${report.file_name}</td>
+<td>${report.result}</td>
+<td>${report.confidence}%</td>
+<td>${report.analyzed_at}</td>
+</tr>
+`;
+
+});
+
+document.getElementById("reportTable").innerHTML = output;
+
+})
+.catch(error => console.log(error));
+
+</script>
+
+
+</body>
+</html>

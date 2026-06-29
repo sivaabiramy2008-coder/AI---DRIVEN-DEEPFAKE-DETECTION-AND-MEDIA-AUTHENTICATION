@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Deepfake Detection & Media Authentication</title>
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#eef2ff,#dbeafe);
+    min-height:100vh;
+}
+
+/* Navbar */
+
+nav{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:25px 80px;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+    color:#111827;
+}
+
+.menu{
+    display:flex;
+    gap:40px;
+}
+
+.menu a{
+    text-decoration:none;
+    color:#374151;
+    font-size:16px;
+    font-weight:500;
+}
+
+.login-btn{
+    background:#7c3aed;
+    color:white;
+    text-decoration:none;
+    padding:12px 28px;
+    border-radius:12px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.login-btn:hover{
+    background:#6d28d9;
+}
+
+/* Hero Section */
+
+.hero{
+    width:100%;
+    min-height:85vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px;
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.tag{
+    color:#7c3aed;
+    font-weight:600;
+    margin-bottom:20px;
+    letter-spacing:1px;
+}
+
+.hero h1{
+    font-size:72px;
+    line-height:1.1;
+    color:#111827;
+    margin-bottom:25px;
+}
+
+.hero p{
+    font-size:22px;
+    color:#4b5563;
+    line-height:1.8;
+    margin-bottom:40px;
+}
+
+.start-btn{
+    display:inline-block;
+    background:#7c3aed;
+    color:white;
+    text-decoration:none;
+    padding:18px 45px;
+    border-radius:15px;
+    font-size:18px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.start-btn:hover{
+    background:#6d28d9;
+    transform:translateY(-3px);
+}
+
+@media(max-width:768px){
+
+nav{
+    padding:20px;
+    flex-direction:column;
+    gap:20px;
+}
+
+.menu{
+    gap:20px;
+}
+
+.hero h1{
+    font-size:42px;
+}
+
+.hero p{
+    font-size:18px;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">
+AI Deepfake
+</div>
+
+<div class="menu">
+<a href="index.html">Home</a>
+<a href="#features">Features</a>
+<a href="dashboard.html">Dashboard</a>
+<a href="#contact">Contact</a>
+</div>
+
+<a href="login.html" class="login-btn">
+Login
+</a>
+
+</nav>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="tag">
+AI DRIVEN DEEPFAKE DETECTION & MEDIA AUTHENTICATION
+</div>
+
+<h1>
+Detect Deepfakes.<br>
+Protect Digital Trust.
+</h1>
+
+<p>
+Advanced Artificial Intelligence platform for detecting manipulated images, videos and media content with high accuracy and reliability.
+</p>
+
+<a href="login.html" class="start-btn">
+Get Started
+</a>
+
+</div>
+
+</section>
+
+<!-- Features Section -->
+
+<section id="features" class="hero">
+
+<div class="hero-content">
+
+<h2 style="font-size:48px;color:#111827;margin-bottom:25px;">
+Features
+</h2>
+
+<p>
+✔ AI-Powered Deepfake Detection<br><br>
+✔ Image & Video Analysis<br><br>
+✔ Confidence Score Prediction<br><br>
+✔ Media Authentication Reports<br><br>
+✔ Real-Time Detection Dashboard
+</p>
+
+</div>
+
+</section>
+
+<!-- Contact Section -->
+
+<section id="contact" class="hero">
+
+<div class="hero-content">
+
+<h2 style="font-size:48px;color:#111827;margin-bottom:25px;">
+Contact Us
+</h2>
+
+<p>
+Email : support@deepfakeguard.com<br><br>
+
+Phone : +91 9876543210<br><br>
+
+Location : India
+</p>
+
+</div>
+
+
+</section>
+
+</body>
+</html>
