@@ -5,11 +5,11 @@ class Database:
     @staticmethod
     def get_connection():
         return mysql.connector.connect(
-        host="127.0.0.1",
-        user="root",
-        password="",
-        database="deepfake_db",
-        port=3306
+            host="YOUR_AIVEN_HOST",
+            user="avnadmin",
+            password="YOUR_AIVEN_PASSWORD",
+            database="defaultdb",
+            port=16507
         )
 
     @staticmethod
