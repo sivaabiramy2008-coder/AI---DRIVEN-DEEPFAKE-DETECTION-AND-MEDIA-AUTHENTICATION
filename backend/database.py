@@ -1,17 +1,17 @@
+import os
 import mysql.connector
-
 
 class Database:
 
     @staticmethod
     def get_connection():
         return mysql.connector.connect(
-            host="mysql-22ce5cf0-sivaabiramy2008-3abf.l.aivencloud.com",
-            user="avnadmin",
-            password="YOUR_AIVEN_PASSWORD",
-            database="defaultdb",
-             port=16507
-       )
+            host=os.getenv("DB_HOST"),
+            user=os.getenv("DB_USER"),
+            password=os.getenv("DB_PASSWORD"),
+            database=os.getenv("DB_NAME"),
+            port=int(os.getenv("DB_PORT"))
+        )
 
     @staticmethod
     def test_connection():
