@@ -8,10 +8,10 @@ class Database:
         return mysql.connector.connect(
             host="mysql-22ce5cf0-sivaabiramy2008-3abf.l.aivencloud.com",
             user="avnadmin",
-            password="YOUR_AIVEN_PASSWORD"
+            password="YOUR_AIVEN_PASSWORD",
             database="defaultdb",
-            port=16507
-        )
+             port=16507
+       )
 
     @staticmethod
     def test_connection():
